@@ -6,14 +6,24 @@ class Message
   end
 
   protected
-  
+
   def complete?
     self.msg += ' World !'
   end
 
 end
 
-msg = Message.new
-puts msg.msg
-puts msg.complete?
+class Instance < Message
+  def initialize
+    super()
+  end
+
+  def complete?
+    self.complete?
+  end
+end
+
+inst_ = Instance.new
+puts inst_.msg
+puts inst_.complete?
 # print the Hello World ! in output
